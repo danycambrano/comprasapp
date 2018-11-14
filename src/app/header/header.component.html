@@ -1,18 +1,22 @@
-<nav class="navbar navbar-light bg-faded rounded navbar-toggleable-md">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" 
-  aria-controls="containerNavbar" aria-expanded="false" aria-label="Togglenavigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<a class="navbar-brand" href="#">Compras App</a>
-
-<div class="collapse navbar-collapse" id="containerNavbar">
-  <ul class="navbar-nav mr-auto w-100 justify-content-end">
-    <li class="nav-item" routerLinkActive="active">
-      <a class="nav-link" routerLink="/">Inicio</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/proveedores">Proveedores</a>
-    </li>
-  </ul>
-</div>
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Compras App</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]={exact:true} routerLink="/">Inicio</a>
+      <a class="nav-item nav-link" routerLink="/proveedores">Proveedores</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
+        <i class="fa fa-github"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <a class="nav-item nav-link" href="https://medium.com/@beeman" target="_blank">
+        <i class="fa fa-medium"></i>
+      </a>
+    </div>
+  </div>
 </nav>

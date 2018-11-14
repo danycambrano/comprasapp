@@ -8,10 +8,13 @@ import { ProveedoresComponent } from './proveedores/proveedores/proveedores.comp
 import { InicioComponent } from './inicio/inicio.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { AddproveeComponent } from './proveedores/addprovee/addprovee.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent},
   {path: 'proveedores', component: ProveedoresComponent},
+  {path: 'addprovee', component: AddproveeComponent},
   {path: '**', component: InicioComponent}
 ];
 
@@ -20,12 +23,14 @@ const routes: Routes = [
     AppComponent,
     ProveedoresComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddproveeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [ProveedoresService],
   bootstrap: [AppComponent]
