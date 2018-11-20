@@ -14,6 +14,7 @@ import { AddpresComponent } from './presupuestos/addpres/addpres.component';
 import { HttpModule } from '@angular/http';
 import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
+import { EditpresComponent } from './presupuestos/editpres/editpres.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'addprovee', component: AddproveeComponent},
   {path: 'addpres', component: AddpresComponent},
   {path: 'presupuestos', component: PresupuestosComponent},
+  {path: 'editpres/:id', component: EditpresComponent},
   {path: '**', component: InicioComponent}
 ];
 
@@ -34,7 +36,8 @@ const routes: Routes = [
     HeaderComponent,
     AddproveeComponent,
     AddpresComponent,
-    PresupuestosComponent
+    PresupuestosComponent,
+    EditpresComponent
   ],
   imports: [
     BrowserModule,

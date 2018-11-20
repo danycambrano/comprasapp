@@ -10,6 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class PresupuestosService {
 
   presURL = 'https://comprasapp-14339.firebaseio.com/presupuestos.json';
+  preURL = 'https://comprasapp-14339.firebaseio.com/presupuestos';
 
   constructor(private http: Http) { }
 
@@ -28,5 +29,24 @@ export class PresupuestosService {
   getPresupuestos() {
     return this.http.get(this.presURL).pipe(
     map( res => res.json()));
+  }
+
+  getPresupuesto( id$: string) {
+const url = `${this.preURL}/${id$}.json`;
+return this.http.get(url).pipe(map (res => res.json()));
+  }
+
+  putPresupuesto( presupuesto: any, id$: string) {
+    const newpre = JSON.stringify(presupuesto);
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    const url = `${this.preURL}/${id$}.json`;
+
+    return this.http.put( url, newpre, {headers}).pipe
+    (map (res => {
+      console.log(res.json());
+      return res.json();
+    }));
   }
 }
