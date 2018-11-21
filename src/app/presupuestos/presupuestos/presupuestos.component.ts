@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PresupuestosService } from '../../servicios/presupuestos.service';
 
+
 @Component({
   selector: 'app-presupuestos',
   templateUrl: './presupuestos.component.html',
@@ -24,6 +25,13 @@ export class PresupuestosComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+  eliminarPresupuesto(id$) {
+    this.presupuestosService.delPresupuesto(id$)
+    .subscribe( res => {
+      console.log(res);
+    });
   }
 
 }
