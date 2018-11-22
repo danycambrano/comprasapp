@@ -28,6 +28,9 @@ export class ProveedoresService {
   contacto: 'José Pérez León'
 }];
 
+presURL = 'https://comprasapp-14339.firebaseio.com/presupuestos.json';
+preURL = 'https://comprasapp-14339.firebaseio.com/presupuestos';
+
   constructor() { }
 
   getProveedores() {

@@ -19,6 +19,8 @@ import { RegistroComponent } from './autenticacion/registro/registro.component';
 import { AutenticacionService } from './servicios/autenticacion.service';
 import { InisesComponent } from './autenticacion/inises/inises.component';
 import { GuardService } from './servicios/guard.service';
+import { FacturasModule } from './facturas/facturas.module';
+import { FacturasComponent } from './facturas/facturas/facturas.component';
 
 
 
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path: 'editpres/:id', component: EditpresComponent, canActivate: [GuardService]},
   {path: 'registro', component: RegistroComponent},
   {path: 'iniciosesion', component: InisesComponent},
+  {path: 'facturas', component: FacturasComponent},
   {path: '**', component: InicioComponent}
 ];
 
@@ -53,7 +56,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    FacturasModule
   ],
   providers: [ProveedoresService, PresupuestosService, AutenticacionService],
   bootstrap: [AppComponent]

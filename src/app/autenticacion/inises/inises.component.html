@@ -10,8 +10,11 @@
       <input type="password" id="inputPassword" class="form-control" 
       formControlName="password" required>
       <hr>
-      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+      <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" *ngIf="!autenticando">
         Inicie Sesion
+      </button>
+      <button type="submit" class="btn btn-primary" *ngIf="autenticando">
+        Autenticando usuario...
       </button>
     </form>
     <p>Si no dispones de una cuenta pulse<a routerLink="/registro">aquí</a></p>
