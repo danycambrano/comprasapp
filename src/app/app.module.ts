@@ -15,6 +15,9 @@ import { HttpModule } from '@angular/http';
 import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresComponent } from './presupuestos/editpres/editpres.component';
+import { RegistroComponent } from './autenticacion/registro/registro.component';
+import { AutenticacionService } from './servicios/autenticacion.service';
+import { InisesComponent } from './autenticacion/inises/inises.component';
 
 
 
@@ -25,6 +28,8 @@ const routes: Routes = [
   {path: 'addpres', component: AddpresComponent},
   {path: 'presupuestos', component: PresupuestosComponent},
   {path: 'editpres/:id', component: EditpresComponent},
+  {path: 'registro', component: RegistroComponent},
+  {path: 'iniciosesion', component: InisesComponent},
   {path: '**', component: InicioComponent}
 ];
 
@@ -37,7 +42,9 @@ const routes: Routes = [
     AddproveeComponent,
     AddpresComponent,
     PresupuestosComponent,
-    EditpresComponent
+    EditpresComponent,
+    RegistroComponent,
+    InisesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ProveedoresService, PresupuestosService],
+  providers: [ProveedoresService, PresupuestosService, AutenticacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -50,7 +50,7 @@ return this.http.get(url).pipe(map (res => res.json()));
     }));
   }
 
-  delPresupuesto(id$: string){
+  delPresupuesto(id$: string) {
     const url = `${this.preURL}/${id$}.json`;
     return this.http.delete(url).pipe(map(res => res.json()));
   }
